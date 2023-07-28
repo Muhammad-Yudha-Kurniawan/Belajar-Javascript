@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //     function Tugas(firstName, middleName, lastName) {
+    //       this.firstName = firstName;
+    //       this.middleName = middleName;
+    //       this.lastName = lastName;
+    //       this.fullName = function (nim) {
+    //         console.info(`Nama : ${this.firstName} ${this.middleName} ${this.lastName}
+    // Nim : ${nim}`);
+    //       };
+    //       this.hasil = function (nilai1, nilai2) {
+    //         const hitung = nilai1 * nilai2;
+    //         console.info(`Hasil dari perkalian berikut : ${hitung}`);
+    //       };
+    //     }
+
+    //     const run = new Tugas("Muhammad", "Yudha", "Kurniawan");
+    //     run.fullName(310121023640);
+    //     run.hasil(2, 3);
+
+    //     console.log(run);
+    // function Employee(firstName, middleName) {
+    //   this.firstName = firstName;
+    //   this.middleName = middleName;
+    //   this.sayHello = function (name) {
+    //     console.info(`Hello ${name}, My name is ${firstName} ${middleName}`);
+    //   };
+    // }
+
+    // function Manager(firstName, middleName, lastName) {
+    //   Employee.call(this, firstName, middleName);
+    //   this.lastName = lastName;
+    // }
+
+    // const yudha = new Manager("Muhammad", "Yudha", "Kurniawan");
+    // console.info(yudha);
+
+    // function Person(firstName, lastName) {
+    //   this.firstName = firstName;
+    //   this.lastName = lastName;
+    //   this.sayHello = function (name) {
+    //     console.info(`Hello ${name}, my name is ${this.firstName}`);
+    //   };
+    // }
+
+    // Person.prototype.sayGoodbye = function () {
+    //   console.info(`Goodbye`);
+    // };
+    // Person.prototype.run = function () {
+    //   console.info(`${this.firstName} is Running`);
+    // };
+
+    // const yudha = new Person("Muhammad", "Kurniawan");
+    // yudha.sayHello("Joko");
+
+    // const budi = new Person("Budi", "Nugraha");
+    // budi.sayHello("Joko");
+
+    // console.log(yudha);
+    // console.log(budi);
+    // eko.sayGoodbye();
+    // eko.run();
+
+    function Manager(name) {
+      this.name = name;
+    }
+
+    function Employee(name) {
+      this.name = name;
+    }
+
+    Manager.prototype = Object.create(Employee.prototype);
+
+    Manager.prototype.sayHello = function (name) {
+      console.info(`Hello ${name}, My name is ${this.name}`);
+    };
+
+    Employee.prototype.sayHello = function (name) {
+      console.info(`Hello ${name}, My name is ${this.name}`);
+    };
+
+    const muhammad = new Manager("Muhammad");
+    muhammad.sayHello("Yudha");
+
+    const yudha = new Employee("Yudha");
+    yudha.sayHello("Muhammad");
+
+    console.info(muhammad);
+    console.info(yudha);
+  </script>
+</html>
