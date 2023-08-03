@@ -7,297 +7,152 @@
   </head>
   <body></body>
   <script>
-    //     function Tugas(firstName, middleName, lastName) {
-    //       this.firstName = firstName;
-    //       this.middleName = middleName;
-    //       this.lastName = lastName;
-    //       this.fullName = function (nim) {
-    //         console.info(`Nama : ${this.firstName} ${this.middleName} ${this.lastName}
-    // Nim : ${nim}`);
-    //       };
-    //       this.hasil = function (nilai1, nilai2) {
-    //         const hitung = nilai1 * nilai2;
-    //         console.info(`Hasil dari perkalian berikut : ${hitung}`);
-    //       };
-    //     }
-
-    //     const run = new Tugas("Muhammad", "Yudha", "Kurniawan");
-    //     run.fullName(310121023640);
-    //     run.hasil(2, 3);
-
-    //     console.log(run);
-    // function Employee(firstName, middleName) {
+    // function Person(firstName, age){
     //   this.firstName = firstName;
-    //   this.middleName = middleName;
+    //   this.age = age;
+    //   this.sayHello = function(name){
+    //     console.log(`Hello ${name},Nama saya ${this.firstName}, Umur ${this.age}`);
+    //   }
+    // }
+    // const person = new Person("Yudha", 20);
+    // person.sayHello("John");
+    // }
+    // function employee(firstName) {
+    //   this.firstName = firstName;
     //   this.sayHello = function (name) {
-    //     console.info(`Hello ${name}, My name is ${firstName} ${middleName}`);
+    //     console.log(`Hello ${name},Nama saya ${this.firstName}`);
     //   };
     // }
 
-    // function Manager(firstName, middleName, lastName) {
-    //   Employee.call(this, firstName, middleName);
-    //   this.lastName = lastName;
-    // }
-
-    // const yudha = new Manager("Muhammad", "Yudha", "Kurniawan");
-    // console.info(yudha);
-
-    // function Person(firstName, lastName) {
-    //   this.firstName = firstName;
+    // function manager(firstName, lastName) {
+    //   employee.call(this, firstName);
     //   this.lastName = lastName;
     //   this.sayHello = function (name) {
-    //     console.info(`Hello ${name}, my name is ${this.firstName}`);
+    //     console.log(`Hello ${name},Nama saya ${this.firstName} ${this.lastName}`);
     //   };
     // }
 
-    // Person.prototype.sayGoodbye = function () {
-    //   console.info(`Goodbye`);
+    // const employee1 = new employee("John");
+    // employee1.sayHello("yudha");
+
+    // const manager1 = new manager("John", "Doe");
+    // manager1.sayHello("yudha");
+
+    // const person = function (firstName, lastName) {
+    //   this.firstName = firstName;
+    //   this.lastName = lastName;
     // };
-    // Person.prototype.run = function () {
-    //   console.info(`${this.firstName} is Running`);
-    // };
+    // person.prototype.sayHello = function(){
+    //   console.log(`Hello`);
+    // }
 
-    // const yudha = new Person("Muhammad", "Kurniawan");
-    // yudha.sayHello("Joko");
+    // const proto = new person("John", "Doe");
+    // console.info(proto);
 
-    // const budi = new Person("Budi", "Nugraha");
-    // budi.sayHello("Joko");
-
-    // console.log(yudha);
-    // console.log(budi);
-    // eko.sayGoodbye();
-    // eko.run();
-
-    // function Manager(name) {
+    // function employee(name) {
     //   this.name = name;
     // }
 
-    // function Employee(name) {
+    // function manager(name) {
     //   this.name = name;
     // }
 
-    // Manager.prototype = Object.create(Employee.prototype);
+    // manager.prototype = Object.create(employee.prototype);
 
-    // Manager.prototype.sayHello = function (name) {
-    //   console.info(`Hello ${name}, My name is ${this.name}`);
-    // };
+    // manager.prototype.sayHello = function (name){
+    //   console.info(`Hello ${name},My name is Manager ${this.name}`);
+    // }
 
-    // Employee.prototype.sayHello = function (name) {
-    //   console.info(`Hello ${name}, My name is ${this.name}`);
-    // };
+    // employee.prototype.sayHello = function (name){
+    //   console.info(`Hello ${name},My name is Employee ${this.name}`);
+    // }
 
-    // const muhammad = new Manager("Muhammad");
-    // muhammad.sayHello("Yudha");
+    // const employee1 = new employee("John");
+    // employee1.sayHello("yudha");
 
-    // const yudha = new Employee("Yudha");
-    // yudha.sayHello("Muhammad");
-
-    // console.info(muhammad);
-    // console.info(yudha);
+    // const manager1 = new manager("Yudha");
+    // manager1.sayHello("John");
 
     // class Person {
     //   constructor(name) {
     //     this.name = name;
-    //     console.info(`Membuat person ${this.name}`);
     //   }
     //   sayHello(name) {
-    //     console.info(`Hello Method ${this.name}`);
+    //     console.info(`Hello ${name}`);
     //   }
     // }
 
-    // const yudha = new Person("Yudha");
-    // console.info(yudha);
-    // yudha.sayHello("Muhammad");
-    // class Employee {
-    //   constructor(firstName){
-    //     this.firstName = firstName;
-    //   }
-    //   sayHello(name) {
-    //     console.info(`Hello ${name}, My name is employee ${this.firstName}`);
+    // class Employee extends Person {
+    //   constructor(name) {
+    //     super(name);
     //   }
     // }
 
-    // class Manager extends Employee {
-    //   constructor(firstName, lastName){
-    //     super(firstName);
-    //     this.lastName = lastName;
-    //   }
-    //   sayHello(name) {
-    //     console.info(`Hello ${name},  My name is manager ${this.firstName} ${this.lastName}`);
-    //   }
-    // }
+    // const person = new Person("Yudha");
+    // console.info(person.name);
+    // person.sayHello("John");
 
-    // const yudha = new Employee("Yudha");
-    // yudha.sayHello("Manager");
-
-    // const budi = new Manager("Pak", "Budi");
-    // budi.sayHello("Employee");
-
-    // console.info(yudha);
-    // console.info(budi);
+    // const employee = new Employee("John");
+    // console.info(employee);
 
     // class Shape {
     //   paint() {
-    //     console.info("Paint Shape");
+    //     console.info(`Paint Shape`);
     //   }
     // }
 
     // class Circle extends Shape {
     //   paint() {
     //     super.paint();
-    //     console.info("Paint Circle");
+    //     console.info(`Paint Circle`);
     //   }
     // }
 
-    // const shape = new Shape();
-    // const circle = new Circle();
-    // circle.paint();
-
-    // console.info(shape);
-    // console.info(circle);
+    // const circle = new Shape();
+    // console.info(circle.paint());
 
     // class Person {
     //   constructor(firstName, lastName) {
     //     this.firstName = firstName;
     //     this.lastName = lastName;
     //   }
-    //   get fullName() {
-    //     return this.firstName + this.lastName;
+
+    //   get name() {
+    //     return `${this.firstName} ${this.lastName}`;
     //   }
 
-    //   set fullName(value) {
-    //     const result = value.split();
-    //     this.firstName = result[0];
-    //     this.lastName = result[1];
-    //   }
-    // }
-    // const yudha = new Person("Muhammad", "Yudha");
-    // console.info(yudha);
-
-    //   class Customer {
-    //     firstName;
-    //     lastName;
-    //     balance = 0;
-
-    //     constructor(firstName, lastName) {
-    //       this.firstName = firstName;
-    //       this.lastName = lastName;
-    //     }
-    //   }
-    //   const total = new Customer("Muhammad", "Yudha");
-    //   console.info(total);
-
-    // class Counter {
-    //   #counter = 0;
-
-    //   increment(counter) {
-    //     this.#counter++;
-    //     console.info(`Hasil dari Increment = ${this.#counter}`);
-    //   }
-    //   decrement(counter) {
-    //     this.#counter--;
-    //   }
-    //   get(){
-    //     return this.#counter;
+    //   set name(value) {
+    //     const result = value.split(" ");
+    //     this.firstName = firstName[0];
+    //     this.lastName = lastName[1];
     //   }
     // }
-    // const counter = new Counter();
-    // counter.increment();
-    // counter.increment();
-    // counter.increment();
-    // counter.increment();
-    // counter.increment();
 
-    // console.info(counter.get());
+    // const person = new Person("Yudha","Kurniawan");
+    // console.info(person);
 
-    /*class Person {
-      #nim = 310121023640;
-      say(name) {
-        if (name) {
-          this.#sayWithName(name);
-        } else {
-          this.#sayWithoutName(name)
-          console.info(`${this.#nim}`);
-        }
-      }
+    // class Customer {
+    //   firstName;
+    //   lastName;
+    //   #balance = 0;
 
-      #sayWithName(name) {
-        console.info(`Hello ${name}`);
-      }
-
-      #sayWithoutName() {
-        console.info(`Hello`);
-      }
-    }
-
-    const yudha = new Person();
-    yudha.say();*/
-    // class Configuration{
-    //   static name = "Belajar JavaScript Dasar";
-    //   static version = 1.0;
-    //   static author = "Muhammad Yudha Kurniawan";
-    // }
-
-    // const configuration = new Configuration();
-    // console.info(configuration);
-
-    // Configuration.version = 2.0;
-
-    // console.info(Configuration.name);
-    // console.info(Configuration.version);
-    // console.info(Configuration.author);
-
-    // class Penjumlahan {
-    //   static sum(...numbers) {
-    //     if (numbers.length === 0) {
-    //       throw new Error(" Total parameter harus lebih dari 0");
-    //     }
-    //     let total = 0;
-    //     for (const number of numbers){
-    //       total += number;
-    //     }
-    //     return total;
+    //   constructor(firstName, lastName) {
+    //     this.firstName = firstName;
+    //     this.lastName = lastName;
     //   }
     // }
-    // try {
-    //   console.info(Penjumlahan.sum());
-    // } catch (error) {
-    //   console.error(`Terjadi Error${error.message}`);
-    // } finally {
-    //   console.info("Kode Program Selesai");
-    // }
-    // const hasil = Penjumlahan.sum(1,1,1,1,1,1);
-    // console.info(hasil);
 
-    //   class Counter {
-    //     #counter = 0;
-    //     next(){
-    //       try{
-    //         return this.#counter;
-    //       }finally{
-    //         this.#counter++;
-    //       }
-    //     }
-    //   }
+    // const customer = new Customer("Yudha", "Kurniawan");
+    // customer.balance = 100;
+    // console.info(customer);
+    // customer.firstName = "Muhammad";
+    // customer.lastName = "Yudha";
+    // console.info(customer);
 
-    //   const counter = new Counter();
-    //   console.info(counter.next());
-    //   console.info(counter.next());
-    //   console.info(counter.next());
-
-    // class ValidationError extends Error {
-    //   constructor(message, field) {
-    //     super(message);
-    //     this.field = field;
-    //   }
-    // }
     // class MathUtil {
     //   static sum(...numbers) {
     //     if (numbers.length === 0) {
-    //       throw new ValidationError(
-    //         "Total parameter harus lebih dari 0",
-    //         "numbers"
-    //       );
+    //       throw new Error("harus di isi");
     //     }
 
     //     let total = 0;
@@ -308,22 +163,13 @@
     //   }
     // }
 
-    // try {
-    //   console.info(MathUtil.sum());
-    //   console.info("Eko");
-    // } catch (error) {
-    //   if (error instanceof ValidationError) {
-    //     console.info(
-    //       `Terjadi error di field ${error.field} dengan error ${error.message}`
-    //     );
-    //   } else {
-    //     console.info(`Terjadi error : ${error.message}`);
-    //   }
-    // } finally {
-    //   console.info("Program selesai");
+    // try{
+    //   console.info(MathUtil.sum(1));
+    // }catch (error){
+    //   console.error(`Terjadi error : ${error.message}`);
+    // }finally{
+    //   console.info("Kode Program Selesai");
     // }
-
-    // console.info("Khannedy");
 
     class CounterIteratorResult {
       constructor(value, done) {
@@ -331,8 +177,38 @@
         this.done = done;
       }
     }
-    
-    class CounterIterator{
+
+    class CounterIterator {
+      constructor(value, max) {
+        this.value = value;
+        this.max = max;
+      }
+      next() {
+        try {
+          if (this.value > this.max) {
+            return new CounterIteratorResult(this.value, true);
+          } else {
+            return new CounterIteratorResult(this.value, false);
+          }
+        } finally {
+          this.value++; 
+        }
+      }
+    }
+
+    class Counter{
+      constructor(value, max) {
+        this.value = value;
+        this.max = max;
+      }
+      [Symbol.iterator](){
+        return new CounterIterator(this.value, this.max);
+      }
+    }
+
+    const counter = new Counter(1, 10);
+    for(const value of counter){
+      console.info(value);
     }
   </script>
 </html>
