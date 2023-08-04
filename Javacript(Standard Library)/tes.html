@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const data = [];
+      data.push("Muhammad");
+      data.forEach((value, index) => {
+        console.info(`${index} = ${value}`);
+      });
+
+      function isperson(person) {
+        return person === "Muhammad";
+      }
+      console.info(data.find(isperson));
+    </script>
+  </body>
+</html>
