@@ -7,16 +7,24 @@
   </head>
   <body>
     <script>
-      const data = [];
-      data.push("Muhammad");
-      data.forEach((value, index) => {
-        console.info(`${index} = ${value}`);
-      });
+      // const data = [];
+      // data.push("Muhammad");
+      // data.forEach((value, index) => {
+      //   console.info(`${index} = ${value}`);
+      // });
 
-      function isperson(person) {
-        return person === "Muhammad";
-      }
-      console.info(data.find(isperson));
+      // function isperson(person) {
+      //   return person === "Muhammad";
+      // }
+      // console.info(data.find(isperson));
+
+      const pass = "admin123";
+      const encodePass = btoa(pass);
+
+      console.info(encodePass);
+
+      const decodedPass = atob(encodePass);
+      console.info(decodedPass);
     </script>
   </body>
 </html>
