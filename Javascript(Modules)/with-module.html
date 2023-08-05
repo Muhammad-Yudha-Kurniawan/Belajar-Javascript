@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>With Module</title>
+    <script type="module" src="scripts/say.mjs"></script>
+</head>
+<body>
+<script type="module">
+    import * as yudha from "./scripts/say.mjs"
+
+    yudha.sayHello("Eko");
+    yudha.sayGoodBye("Eko");
+
+    console.info(yudha.name);
+</script>
+</body>
+</html>
